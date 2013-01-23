@@ -15,6 +15,26 @@
 
 @implementation LocationViewController
 
+- (void)locationDetailsViewControllerDidCancel:(LocationDetailsViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)locationDetailsViewControllerDidSave:(LocationDetailsViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"AddLocation"])
+    {
+        UINavigationController *navigationController = segue.destinationViewController;
+        LocationDetailsViewController *playDetailsViewController = [[navigationController viewControllers] objectAtIndex:0];
+        playDetailsViewController.delegate = self;
+    }
+}
+
 - (NSMutableArray *)locations
 {
     if (!_locations) {

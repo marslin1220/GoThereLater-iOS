@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A20FF95E169EF73500FA9E13 /* LocationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A20FF95D169EF73500FA9E13 /* LocationDetailsViewController.m */; };
 		A213F5F9169C1B2E00BA282F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A213F5F8169C1B2E00BA282F /* UIKit.framework */; };
 		A213F5FB169C1B2E00BA282F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A213F5FA169C1B2E00BA282F /* Foundation.framework */; };
 		A213F5FD169C1B2E00BA282F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A213F5FC169C1B2E00BA282F /* CoreGraphics.framework */; };
@@ -23,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A20FF95C169EF73500FA9E13 /* LocationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDetailsViewController.h; sourceTree = "<group>"; };
+		A20FF95D169EF73500FA9E13 /* LocationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDetailsViewController.m; sourceTree = "<group>"; };
 		A213F5F4169C1B2E00BA282F /* GoThereLater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoThereLater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A213F5F8169C1B2E00BA282F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A213F5FA169C1B2E00BA282F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -92,6 +95,8 @@
 				A213F607169C1B2E00BA282F /* AppDelegate.h */,
 				A213F608169C1B2E00BA282F /* AppDelegate.m */,
 				A213F610169C1B2E00BA282F /* MainStoryboard.storyboard */,
+				A20FF95C169EF73500FA9E13 /* LocationDetailsViewController.h */,
+				A20FF95D169EF73500FA9E13 /* LocationDetailsViewController.m */,
 				A213F61E169C22A300BA282F /* Location.h */,
 				A213F61F169C22A300BA282F /* Location.m */,
 				A213F61B169C21B900BA282F /* LocationViewController.h */,
@@ -188,6 +193,7 @@
 				A213F615169C1B2E00BA282F /* ViewController.m in Sources */,
 				A213F61D169C21B900BA282F /* LocationViewController.m in Sources */,
 				A213F620169C22A300BA282F /* Location.m in Sources */,
+				A20FF95E169EF73500FA9E13 /* LocationDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +310,7 @@
 				A213F61A169C1B2E00BA282F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
