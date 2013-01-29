@@ -25,6 +25,20 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)addLocation:(Location *)newLocation
+{
+    [self.locations addObject:newLocation];
+    
+    NSIndexPath *indexPath =
+    [NSIndexPath indexPathForRow:[self.locations count] - 1 inSection:0];
+    
+	[self.tableView insertRowsAtIndexPaths:
+     [NSArray arrayWithObject:indexPath]
+                          withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"AddLocation"])

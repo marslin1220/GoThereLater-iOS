@@ -7,6 +7,7 @@
 //
 
 #import "LocationDetailsViewController.h"
+#import "Location.h"
 
 @interface LocationDetailsViewController ()
 
@@ -21,7 +22,12 @@
 
 - (IBAction)done:(id)sender
 {
-    [self.delegate locationDetailsViewControllerDidSave:self];
+    Location *newLocation = [Location new];
+    newLocation.title = self.titleTextField.text;
+    newLocation.location = self.locationTextField.text;
+    newLocation.description = self.descriptionTextField.text;
+    
+    [self.delegate addLocation:newLocation];
 }
 
 - (BOOL) textFieldShouldReturn: (UITextField *)textField {

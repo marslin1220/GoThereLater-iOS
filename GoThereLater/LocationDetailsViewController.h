@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Location.h"
 
 @class LocationDetailsViewController;
 
 @protocol LocationDetailsViewControllerDelegate <NSObject>
 - (void)locationDetailsViewControllerDidCancel:(LocationDetailsViewController *)controller;
 - (void)locationDetailsViewControllerDidSave:(LocationDetailsViewController *)controller;
+- (void)addLocation:(Location *) newLocation;
 @end
 
 @interface LocationDetailsViewController : UITableViewController
