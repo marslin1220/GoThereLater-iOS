@@ -7,6 +7,7 @@
 //
 
 #import "LocationViewController.h"
+#import "LocationAdderViewController.h"
 #import "Location.h"
 
 @interface LocationViewController ()
@@ -15,12 +16,8 @@
 
 @implementation LocationViewController
 
-- (void)locationDetailsViewControllerDidCancel:(LocationDetailsViewController *)controller
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
-- (void)locationDetailsViewControllerDidSave:(LocationDetailsViewController *)controller
+- (void)locationAdderViewControllerDidCancel:(LocationAdderViewController *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -41,11 +38,10 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"AddLocation"])
-    {
-        UINavigationController *navigationController = segue.destinationViewController;
-        LocationDetailsViewController *playDetailsViewController = [[navigationController viewControllers] objectAtIndex:0];
-        playDetailsViewController.delegate = self;
+    if ([segue.identifier isEqualToString:@"AddLocation"]) {
+        UINavigationController* navigationController = (UINavigationController *)segue.destinationViewController;
+        LocationAdderViewController *locationAdderViewController = [[navigationController viewControllers]objectAtIndex:0];
+        locationAdderViewController.delegate = self;
     }
 }
 
@@ -161,12 +157,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
     /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
+    LocationDetailsViewController* locationDetailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+    
+    NSLog(@"%@%@", @"Title: ", [[self.locations objectAtIndex:indexPath.row] title]);
+    
+    locationDetailViewController.titleTextField.text = [[self.locations objectAtIndex:indexPath.row] title];
+    
+    locationDetailViewController.locationTextField.text = [[self.locations objectAtIndex:indexPath.row] location];
+    
+    locationDetailViewController.descriptionTextField.text = [[self.locations objectAtIndex:indexPath.row] description];
+    
+    [locationDetailViewController refreshControl];
+    
+    [self.navigationController pushViewController:locationDetailViewController animated:YES];
      */
 }
 

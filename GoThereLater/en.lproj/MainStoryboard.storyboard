@@ -33,6 +33,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="FZl-30-jav" kind="modal" trigger="accessoryAction" id="zTV-lI-O1X"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -43,7 +46,7 @@
                     <navigationItem key="navigationItem" title="GoThereLater" id="NH3-wC-jrv">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="i3G-SA-Xjt">
                             <connections>
-                                <segue destination="mHm-09-GDE" kind="modal" identifier="AddLocation" id="3th-Ag-VzO"/>
+                                <segue destination="x1p-tz-cdQ" kind="modal" identifier="AddLocation" id="q34-8o-jK9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -52,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="384" y="-37"/>
         </scene>
-        <!--Location Details View Controller - Add Location-->
+        <!--Location Adder View Controller - Add Location-->
         <scene sceneID="0rE-XK-DPn">
             <objects>
-                <tableViewController id="Fg1-UH-VRE" customClass="LocationDetailsViewController" sceneMemberID="viewController">
+                <tableViewController id="Fg1-UH-VRE" customClass="LocationAdderViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="4lP-4p-J0B">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -165,12 +168,12 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="sFM-fD-oyX">
                             <connections>
-                                <action selector="done:" destination="Fg1-UH-VRE" id="zBQ-GP-kY3"/>
+                                <action selector="done:" destination="Fg1-UH-VRE" id="3AV-tk-yGb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="descriptionTextField" destination="BZW-u5-UsM" id="rQ0-6X-XDF"/>
+                        <outlet property="descTextField" destination="BZW-u5-UsM" id="scw-Zn-3iD"/>
                         <outlet property="locationTextField" destination="35S-DV-3Ja" id="dh5-jz-pCQ"/>
                         <outlet property="titleTextField" destination="Q7X-Hl-jPx" id="7zn-7B-sPo"/>
                     </connections>
@@ -197,31 +200,157 @@
             </objects>
             <point key="canvasLocation" x="-234" y="-37"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="b4Z-Lk-YOw">
+        <!--Location Details View Controller - Location Detail-->
+        <scene sceneID="Mr6-Ot-flb">
             <objects>
-                <navigationController id="mHm-09-GDE" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DetailViewController" title="Location Detail" id="FZl-30-jav" customClass="LocationDetailsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Mv2-Gu-lec">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Title" id="nEE-St-SsY">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="L1d-Cr-BST">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kr5-4g-uqj">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="NpQ-rY-0Lg"/>
+                                                        <constraint firstAttribute="width" constant="300" id="ZQE-Rl-EMd"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="FZl-30-jav" id="SX6-iK-wh7"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="Kr5-4g-uqj" firstAttribute="centerY" secondItem="L1d-Cr-BST" secondAttribute="centerY" type="default" id="7iY-uf-1BH"/>
+                                            <constraint firstItem="Kr5-4g-uqj" firstAttribute="centerX" secondItem="L1d-Cr-BST" secondAttribute="centerX" type="default" id="VpW-oF-FI2"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Location" id="s8h-AY-NDU">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="UiI-Sz-4Lh">
+                                        <rect key="frame" x="0.0" y="138" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NZN-ZW-Bcv">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="9jX-dZ-Mck"/>
+                                                        <constraint firstAttribute="width" constant="300" id="ncT-8c-Iti"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="FZl-30-jav" id="wvm-i0-KSB"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="NZN-ZW-Bcv" firstAttribute="centerX" secondItem="UiI-Sz-4Lh" secondAttribute="centerX" type="default" id="MhB-Oc-WNV"/>
+                                            <constraint firstItem="NZN-ZW-Bcv" firstAttribute="centerY" secondItem="UiI-Sz-4Lh" secondAttribute="centerY" type="default" id="loQ-BA-luC"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Description" id="lYO-Pv-sIp">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="YHV-hy-g6d">
+                                        <rect key="frame" x="0.0" y="230" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MmW-jh-DzM">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="300" id="Mbx-a9-JqQ"/>
+                                                        <constraint firstAttribute="height" constant="30" id="RE8-wt-Rrx"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="FZl-30-jav" id="IBM-BU-kwu"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="MmW-jh-DzM" firstAttribute="centerX" secondItem="YHV-hy-g6d" secondAttribute="centerX" type="default" id="Evk-ez-nkg"/>
+                                            <constraint firstItem="MmW-jh-DzM" firstAttribute="centerY" secondItem="YHV-hy-g6d" secondAttribute="centerY" type="default" id="doC-Gn-kbr"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="FZl-30-jav" id="mzN-VP-FMJ"/>
+                            <outlet property="delegate" destination="FZl-30-jav" id="waL-Ea-zDb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Location Detail" id="Hj7-ED-7gQ"/>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="MmW-jh-DzM" id="wPf-UD-d3s"/>
+                        <outlet property="locationTextField" destination="NZN-ZW-Bcv" id="XHS-I9-GNr"/>
+                        <outlet property="titleTextField" destination="Kr5-4g-uqj" id="zuf-tC-e76"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MUz-PW-url" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="993" y="643"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Xrt-9U-Zgj">
+            <objects>
+                <navigationController id="x1p-tz-cdQ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XWD-g4-glW">
+                    <navigationItem key="navigationItem" id="vcp-Ch-oq6"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="diV-Lg-6Mh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Fg1-UH-VRE" kind="relationship" relationship="rootViewController" id="Pas-Y6-hk3"/>
+                        <segue destination="Fg1-UH-VRE" kind="relationship" relationship="rootViewController" id="EkQ-gz-7Xy"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ppT-mZ-X2R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZnK-rm-xLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="993" y="-37"/>
         </scene>
     </scenes>
     <classes>
-        <class className="LocationDetailsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LocationDetailsViewController.h"/>
+        <class className="LocationAdderViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LocationAdderViewController.h"/>
             <relationships>
                 <relationship kind="action" name="cancel:"/>
                 <relationship kind="action" name="done:"/>
+                <relationship kind="outlet" name="descTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="locationTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="titleTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="LocationDetailsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LocationDetailsViewController.h"/>
+            <relationships>
                 <relationship kind="outlet" name="descriptionTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="locationTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="titleTextField" candidateClass="UITextField"/>

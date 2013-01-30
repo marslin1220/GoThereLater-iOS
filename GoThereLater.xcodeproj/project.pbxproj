@@ -21,6 +21,7 @@
 		A213F615169C1B2E00BA282F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A213F614169C1B2E00BA282F /* ViewController.m */; };
 		A213F61D169C21B900BA282F /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A213F61C169C21B900BA282F /* LocationViewController.m */; };
 		A213F620169C22A300BA282F /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = A213F61F169C22A300BA282F /* Location.m */; };
+		A234F7DA16B7F8570021E826 /* LocationAdderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A234F7D916B7F8570021E826 /* LocationAdderViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		A213F61C169C21B900BA282F /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 		A213F61E169C22A300BA282F /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		A213F61F169C22A300BA282F /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		A234F7D816B7F8570021E826 /* LocationAdderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAdderViewController.h; sourceTree = "<group>"; };
+		A234F7D916B7F8570021E826 /* LocationAdderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAdderViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,8 @@
 				A213F607169C1B2E00BA282F /* AppDelegate.h */,
 				A213F608169C1B2E00BA282F /* AppDelegate.m */,
 				A213F610169C1B2E00BA282F /* MainStoryboard.storyboard */,
+				A234F7D816B7F8570021E826 /* LocationAdderViewController.h */,
+				A234F7D916B7F8570021E826 /* LocationAdderViewController.m */,
 				A20FF95C169EF73500FA9E13 /* LocationDetailsViewController.h */,
 				A20FF95D169EF73500FA9E13 /* LocationDetailsViewController.m */,
 				A213F61E169C22A300BA282F /* Location.h */,
@@ -194,6 +199,7 @@
 				A213F61D169C21B900BA282F /* LocationViewController.m in Sources */,
 				A213F620169C22A300BA282F /* Location.m in Sources */,
 				A20FF95E169EF73500FA9E13 /* LocationDetailsViewController.m in Sources */,
+				A234F7DA16B7F8570021E826 /* LocationAdderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,21 +15,6 @@
 
 @implementation LocationDetailsViewController
 
-- (IBAction)cancel:(id)sender
-{
-    [self.delegate locationDetailsViewControllerDidCancel:self];
-}
-
-- (IBAction)done:(id)sender
-{
-    Location *newLocation = [Location new];
-    newLocation.title = self.titleTextField.text;
-    newLocation.location = self.locationTextField.text;
-    newLocation.description = self.descriptionTextField.text;
-    
-    [self.delegate addLocation:newLocation];
-}
-
 - (BOOL) textFieldShouldReturn: (UITextField *)textField {
     [textField resignFirstResponder];
     
@@ -61,19 +46,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.section == 0) {
-        [self.titleTextField becomeFirstResponder];
-    } else if (indexPath.section == 1) {
-        [self.locationTextField becomeFirstResponder];
-    } else if (indexPath.section == 2) {
-        [self.descriptionTextField becomeFirstResponder];
-    }
-}
-
 
 @end
