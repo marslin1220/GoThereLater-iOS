@@ -39,8 +39,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"AddLocation"]) {
-        UINavigationController* navigationController = (UINavigationController *)segue.destinationViewController;
-        LocationAdderViewController *locationAdderViewController = [[navigationController viewControllers]objectAtIndex:0];
+        LocationAdderViewController *locationAdderViewController = segue.destinationViewController;
         locationAdderViewController.delegate = self;
     }
 }

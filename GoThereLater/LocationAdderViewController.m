@@ -25,7 +25,7 @@
 {
     NSLog(@"%@", @"cancel");
     
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)done:(id)sender
