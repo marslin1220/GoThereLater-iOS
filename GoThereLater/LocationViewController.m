@@ -8,9 +8,11 @@
 
 #import "LocationViewController.h"
 #import "LocationAdderViewController.h"
+#import "LocationDetailsViewController.h"
 #import "Location.h"
 
 @interface LocationViewController ()
+
 
 @end
 
@@ -41,6 +43,9 @@
     if ([segue.identifier isEqualToString:@"AddLocation"]) {
         LocationAdderViewController *locationAdderViewController = segue.destinationViewController;
         locationAdderViewController.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"ShowDetail"]) {
+        LocationDetailsViewController *locationDetailViewController = segue.destinationViewController;
+        locationDetailViewController.selectedLocation = [self.locations objectAtIndex:self.tableView.indexPathForSelectedRow.row];
     }
 }
 
@@ -156,21 +161,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
-    LocationDetailsViewController* locationDetailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
-    
-    NSLog(@"%@%@", @"Title: ", [[self.locations objectAtIndex:indexPath.row] title]);
-    
-    locationDetailViewController.titleTextField.text = [[self.locations objectAtIndex:indexPath.row] title];
-    
-    locationDetailViewController.locationTextField.text = [[self.locations objectAtIndex:indexPath.row] location];
-    
-    locationDetailViewController.descriptionTextField.text = [[self.locations objectAtIndex:indexPath.row] description];
-    
-    [locationDetailViewController refreshControl];
-    
-    [self.navigationController pushViewController:locationDetailViewController animated:YES];
-     */
 }
 
 @end

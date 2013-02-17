@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Location.h"
 
 @interface LocationDetailsViewController : UITableViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *locationTextField;
 @property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
+
+@property (strong, nonatomic) Location* selectedLocation;
 
 @end

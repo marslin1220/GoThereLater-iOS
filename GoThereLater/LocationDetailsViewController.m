@@ -34,6 +34,10 @@
 {
     [super viewDidLoad];
 
+    self.titleTextField.text = self.selectedLocation.title;
+    self.locationTextField.text = self.selectedLocation.location;
+    self.descriptionTextField.text = self.selectedLocation.description;
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
