@@ -12,6 +12,10 @@
 
 @implementation AppDelegate
 
+@synthesize managedObjectContext = _managedObjectContext;
+@synthesize managedObjectModel = _managedObjectModel;
+@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [Crashlytics startWithAPIKey:@"3e6a04e37462214e7113298c3b5e41abfeb51c91"];
@@ -45,6 +49,103 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Application's Documents directory
+/**
+ Get the sub-directory of the application's documents directory
+ */
+- (NSURL *) applicationDocumentsDirectory
+{
+    return [[[ NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
+{
+    // Return if initialized
+    if (_persistentStoreCoordinator != nil)
+    {
+        return _persistentStoreCoordinator;
+    }
+    
+    // Get the object path under Documents directory
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"data.sqlite"];
+    
+    NSError *error = nil;
+    
+    // Initailize
+    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
+    
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error])
+    {
+        NSLog(@"There is an unexpected error when access database %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+    return _persistentStoreCoordinator;
+}
+
+/**
+ Create NSManagedObjectModel object from data model
+ */
+- (NSManagedObjectModel *)managedObjectModel
+{
+    // Return if initialized
+    if (_managedObjectModel != nil)
+    {
+        return _managedObjectModel;
+    }
+    
+    // Load the file and return
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"LocationContent" withExtension:@"momd"];
+    
+    // Make an instance of m_managedObjectModel from Model
+    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    
+    if (_managedObjectModel == nil) {
+        NSLog(@"_managedObjectModel is nil");
+    }
+    
+    return _managedObjectModel;
+}
+
+/**
+ Return load NSManagedObjectContext object from sql-lite
+ */
+- (NSManagedObjectContext *)managedObjectContext
+{
+    if (_managedObjectContext != nil)
+    {
+        return _managedObjectContext;
+    }
+    
+    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    
+    if (coordinator != nil)
+    {
+        _managedObjectContext = [[NSManagedObjectContext alloc] init];
+        [_managedObjectContext setPersistentStoreCoordinator:coordinator];
+    }
+    
+    return _managedObjectContext;
+}
+
+// Save data into managedObjectContent
+- (void)saveContext
+{
+    NSError *error = nil;
+    
+    // Get NSmanagedObjectContext object
+    NSManagedObjectContext *objectContext = self.managedObjectContext;
+    
+    if (objectContext != nil)
+    {
+        if ([objectContext hasChanges] && ![objectContext save:&error])
+        {
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }
 }
 
 @end

@@ -8,8 +8,31 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate> {
+    NSManagedObjectContext *managedObjectContext;
+    NSManagedObjectModel *managedObjectModel;
+    NSPersistentStoreCoordinator *persistentStoreCoordinator;
+}
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, retain) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+// Sync object with Core Data
+- (void) saveContext;
+
+// Return the Documents sub-folder under the project directory
+-(NSURL *)applicationDocumentsDirectory;
+
+// return "Persistent Store Coordinator" object for management database
+-(NSPersistentStoreCoordinator *) persistentStoreCoordinator;
+
+// Return the object model manager for reading data model
+- (NSManagedObjectModel *) managedObjectModel;
+
+// Return Object Context Manager to sync object
+- (NSManagedObjectContext *) managedObjectContext;
 
 @end

@@ -22,6 +22,9 @@
 		A213F61D169C21B900BA282F /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A213F61C169C21B900BA282F /* LocationViewController.m */; };
 		A213F620169C22A300BA282F /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = A213F61F169C22A300BA282F /* Location.m */; };
 		A234F7DA16B7F8570021E826 /* LocationAdderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A234F7D916B7F8570021E826 /* LocationAdderViewController.m */; };
+		A280F82D16D4AA8C005290C3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A280F82C16D4AA8C005290C3 /* CoreData.framework */; };
+		A280F83116D4ABDA005290C3 /* LocationContent.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A280F82F16D4ABDA005290C3 /* LocationContent.xcdatamodeld */; };
+		A280F83416D4AD79005290C3 /* LocationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = A280F83316D4AD79005290C3 /* LocationEntity.m */; };
 		A280F83716D92A7E005290C3 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A280F83616D92A7E005290C3 /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +53,10 @@
 		A213F61F169C22A300BA282F /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		A234F7D816B7F8570021E826 /* LocationAdderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAdderViewController.h; sourceTree = "<group>"; };
 		A234F7D916B7F8570021E826 /* LocationAdderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAdderViewController.m; sourceTree = "<group>"; };
+		A280F82C16D4AA8C005290C3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A280F83016D4ABDA005290C3 /* LocationContent.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocationContent.xcdatamodel; sourceTree = "<group>"; };
+		A280F83216D4AD79005290C3 /* LocationEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationEntity.h; sourceTree = "<group>"; };
+		A280F83316D4AD79005290C3 /* LocationEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationEntity.m; sourceTree = "<group>"; };
 		A280F83616D92A7E005290C3 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A280F82D16D4AA8C005290C3 /* CoreData.framework in Frameworks */,
 				A213F5F9169C1B2E00BA282F /* UIKit.framework in Frameworks */,
 				A213F5FB169C1B2E00BA282F /* Foundation.framework in Frameworks */,
 				A213F5FD169C1B2E00BA282F /* CoreGraphics.framework in Frameworks */,
@@ -71,6 +79,7 @@
 		A213F5E9169C1B2E00BA282F = {
 			isa = PBXGroup;
 			children = (
+				A280F82C16D4AA8C005290C3 /* CoreData.framework */,
 				A213F5FE169C1B2E00BA282F /* GoThereLater */,
 				A213F5F7169C1B2E00BA282F /* Frameworks */,
 				A213F5F5169C1B2E00BA282F /* Products */,
@@ -113,6 +122,9 @@
 				A213F613169C1B2E00BA282F /* ViewController.h */,
 				A213F614169C1B2E00BA282F /* ViewController.m */,
 				A213F5FF169C1B2E00BA282F /* Supporting Files */,
+				A280F82F16D4ABDA005290C3 /* LocationContent.xcdatamodeld */,
+				A280F83216D4AD79005290C3 /* LocationEntity.h */,
+				A280F83316D4AD79005290C3 /* LocationEntity.m */,
 			);
 			path = GoThereLater;
 			sourceTree = "<group>";
@@ -221,6 +233,8 @@
 				A213F620169C22A300BA282F /* Location.m in Sources */,
 				A20FF95E169EF73500FA9E13 /* LocationDetailsViewController.m in Sources */,
 				A234F7DA16B7F8570021E826 /* LocationAdderViewController.m in Sources */,
+				A280F83116D4ABDA005290C3 /* LocationContent.xcdatamodeld in Sources */,
+				A280F83416D4AD79005290C3 /* LocationEntity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +362,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A280F82F16D4ABDA005290C3 /* LocationContent.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A280F83016D4ABDA005290C3 /* LocationContent.xcdatamodel */,
+			);
+			currentVersion = A280F83016D4ABDA005290C3 /* LocationContent.xcdatamodel */;
+			path = LocationContent.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A213F5EB169C1B2E00BA282F /* Project object */;
 }

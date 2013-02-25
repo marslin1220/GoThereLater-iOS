@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #import "LocationAdderViewController.h"
+#import "AppDelegate.h"
+#import "LocationEntity.h"
 
 @interface LocationViewController : UITableViewController <LocationAdderViewControllerDelegate>
+{
+    AppDelegate *appDelegate;
+}
 
 @property (nonatomic, strong) NSMutableArray *locations;
 

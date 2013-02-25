@@ -10,6 +10,7 @@
 #import "LocationAdderViewController.h"
 #import "LocationDetailsViewController.h"
 #import "Location.h"
+#import "LocationEntity.h"
 
 @interface LocationViewController ()
 
@@ -26,6 +27,19 @@
 
 - (void)addLocation:(Location *)newLocation
 {
+    NSLog(@"Add database managed object.");
+    
+    LocationEntity *locationEntity = (LocationEntity *) [NSEntityDescription insertNewObjectForEntityForName:@"LocationEntity" inManagedObjectContext:[appDelegate managedObjectContext]];
+    
+    locationEntity.title = newLocation.title;
+    locationEntity.desc = newLocation.description;
+    locationEntity.location = newLocation.location;
+    
+    NSError *error = nil;
+    if (![appDelegate.managedObjectContext save:&error]) {
+        NSLog(@"Got an error when adding location entity.");
+    }
+    
     [self.locations addObject:newLocation];
     
     NSIndexPath *indexPath =
@@ -80,6 +94,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
