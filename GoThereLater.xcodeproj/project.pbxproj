@@ -22,6 +22,7 @@
 		A213F61D169C21B900BA282F /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A213F61C169C21B900BA282F /* LocationViewController.m */; };
 		A213F620169C22A300BA282F /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = A213F61F169C22A300BA282F /* Location.m */; };
 		A234F7DA16B7F8570021E826 /* LocationAdderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A234F7D916B7F8570021E826 /* LocationAdderViewController.m */; };
+		A280F83716D92A7E005290C3 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A280F83616D92A7E005290C3 /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		A213F61F169C22A300BA282F /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		A234F7D816B7F8570021E826 /* LocationAdderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAdderViewController.h; sourceTree = "<group>"; };
 		A234F7D916B7F8570021E826 /* LocationAdderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAdderViewController.m; sourceTree = "<group>"; };
+		A280F83616D92A7E005290C3 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				A213F5F9169C1B2E00BA282F /* UIKit.framework in Frameworks */,
 				A213F5FB169C1B2E00BA282F /* Foundation.framework in Frameworks */,
 				A213F5FD169C1B2E00BA282F /* CoreGraphics.framework in Frameworks */,
+				A280F83716D92A7E005290C3 /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +88,7 @@
 		A213F5F7169C1B2E00BA282F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A280F83616D92A7E005290C3 /* Crashlytics.framework */,
 				A213F5F8169C1B2E00BA282F /* UIKit.framework */,
 				A213F5FA169C1B2E00BA282F /* Foundation.framework */,
 				A213F5FC169C1B2E00BA282F /* CoreGraphics.framework */,
@@ -137,6 +141,7 @@
 				A213F5F0169C1B2E00BA282F /* Sources */,
 				A213F5F1169C1B2E00BA282F /* Frameworks */,
 				A213F5F2169C1B2E00BA282F /* Resources */,
+				A280F83516D92A25005290C3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -187,6 +192,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A280F83516D92A25005290C3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 3e6a04e37462214e7113298c3b5e41abfeb51c91";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A213F5F0169C1B2E00BA282F /* Sources */ = {
@@ -278,6 +299,10 @@
 		A213F619169C1B2E00BA282F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GoThereLater/GoThereLater-Prefix.pch";
 				INFOPLIST_FILE = "GoThereLater/GoThereLater-Info.plist";
@@ -289,6 +314,10 @@
 		A213F61A169C1B2E00BA282F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GoThereLater/GoThereLater-Prefix.pch";
 				INFOPLIST_FILE = "GoThereLater/GoThereLater-Info.plist";

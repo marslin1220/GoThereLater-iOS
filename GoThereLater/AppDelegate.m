@@ -6,12 +6,16 @@
 //  Copyright (c) 2013年 marstudio. All rights reserved.
 //
 
+#import <Crashlytics/Crashlytics.h>
+
 #import "AppDelegate.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [Crashlytics startWithAPIKey:@"3e6a04e37462214e7113298c3b5e41abfeb51c91"];
+    
     // Override point for customization after application launch.
     return YES;
 }
