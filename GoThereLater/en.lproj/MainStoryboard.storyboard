@@ -142,7 +142,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Description" id="aLc-6y-5nZ">
+                            <tableViewSection headerTitle="Comment" id="aLc-6y-5nZ">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="OP5-4u-0xI">
                                         <rect key="frame" x="0.0" y="264" width="320" height="46"/>
@@ -183,7 +183,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="sFM-fD-oyX"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="descTextField" destination="BZW-u5-UsM" id="scw-Zn-3iD"/>
+                        <outlet property="commentTextField" destination="BZW-u5-UsM" id="uR5-cb-jHC"/>
                         <outlet property="locationTextField" destination="35S-DV-3Ja" id="dh5-jz-pCQ"/>
                         <outlet property="titleTextField" destination="Q7X-Hl-jPx" id="7zn-7B-sPo"/>
                     </connections>
@@ -279,7 +279,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Description" id="lYO-Pv-sIp">
+                            <tableViewSection headerTitle="Comment" id="lYO-Pv-sIp">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="YHV-hy-g6d">
                                         <rect key="frame" x="0.0" y="230" width="320" height="46"/>
@@ -317,7 +317,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Location Detail" id="Hj7-ED-7gQ"/>
                     <connections>
-                        <outlet property="descriptionTextField" destination="MmW-jh-DzM" id="wPf-UD-d3s"/>
+                        <outlet property="commentTextField" destination="MmW-jh-DzM" id="Gmh-Gi-ohe"/>
                         <outlet property="locationTextField" destination="NZN-ZW-Bcv" id="XHS-I9-GNr"/>
                         <outlet property="titleTextField" destination="Kr5-4g-uqj" id="zuf-tC-e76"/>
                     </connections>
@@ -333,7 +333,7 @@
             <relationships>
                 <relationship kind="action" name="cancel:"/>
                 <relationship kind="action" name="done:"/>
-                <relationship kind="outlet" name="descTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="commentTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="locationTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="titleTextField" candidateClass="UITextField"/>
             </relationships>
@@ -341,7 +341,7 @@
         <class className="LocationDetailsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LocationDetailsViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="descriptionTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="commentTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="locationTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="titleTextField" candidateClass="UITextField"/>
             </relationships>

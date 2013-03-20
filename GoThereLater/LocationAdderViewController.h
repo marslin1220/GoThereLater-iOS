@@ -25,6 +25,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *locationTextField;
-@property (weak, nonatomic) IBOutlet UITextField *descTextField;
+@property (weak, nonatomic) IBOutlet UITextField *commentTextField;
 
 @end

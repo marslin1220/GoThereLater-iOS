@@ -59,7 +59,7 @@
     LocationEntity *locationEntity = (LocationEntity *) [NSEntityDescription insertNewObjectForEntityForName:@"LocationEntity" inManagedObjectContext:[appDelegate managedObjectContext]];
     
     locationEntity.title = newLocation.title;
-    locationEntity.desc = newLocation.description;
+    locationEntity.comment = newLocation.comment;
     locationEntity.location = newLocation.location;
     
     NSError *error = nil;

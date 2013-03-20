@@ -13,6 +13,6 @@
 
 @dynamic title;
 @dynamic location;
-@dynamic desc;
+@dynamic comment;
 
 @end

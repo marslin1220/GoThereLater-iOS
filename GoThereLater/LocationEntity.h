@@ -14,6 +14,6 @@
 
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * location;
-@property (nonatomic, retain) NSString * desc;
+@property (nonatomic, retain) NSString * comment;
 
 @end

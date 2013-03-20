@@ -35,7 +35,7 @@
     Location *newLocation = [Location new];
     newLocation.title = self.titleTextField.text;
     newLocation.location = self.locationTextField.text;
-    newLocation.description = self.descTextField.text;
+    newLocation.comment = self.commentTextField.text;
     
     [self.delegate addLocation:newLocation];
 }
@@ -114,7 +114,7 @@
     } else if (indexPath.section == 1) {
         [self.locationTextField becomeFirstResponder];
     } else if (indexPath.section == 2) {
-        [self.descTextField becomeFirstResponder];
+        [self.commentTextField becomeFirstResponder];
     }
 }
 
