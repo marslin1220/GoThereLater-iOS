@@ -19,4 +19,6 @@
 
 @property (nonatomic, strong) NSMutableArray *locations;
 
+- (void) loadData; // 從資料庫中讀取資料
+
 @end

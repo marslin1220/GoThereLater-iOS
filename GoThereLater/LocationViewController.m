@@ -19,6 +19,33 @@
 
 @implementation LocationViewController
 
+- (void) loadData
+{
+    // 如果有資料，先清空
+    [self.locations removeAllObjects];
+    
+    NSFetchRequest* request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"LocationEntity" inManagedObjectContext:[appDelegate managedObjectContext]];
+    [request setEntity:entity];
+    NSError* error = nil;
+    NSMutableArray* returnObjs = [[[appDelegate managedObjectContext] executeFetchRequest:request error:&error] mutableCopy];
+    // [request release];
+    
+    // 將資料倒入表格的資料來源之中
+    for (Location* currentLocation in returnObjs) {
+        [self.locations addObject:currentLocation];
+    }
+    
+    // [returnObjs release];
+    // 將表格的資料重新載入
+    [self.tableView reloadData];
+}
+
+-(void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self loadData];
+}
 
 - (void)locationAdderViewControllerDidCancel:(LocationAdderViewController *)controller
 {
@@ -67,7 +94,7 @@
 {
     if (!_locations) {
         _locations = [NSMutableArray arrayWithCapacity:10];
-        
+        /*
         Location *location1 = [[Location alloc] init];
         location1.title = @"This is the first title.";
         location1.location = @"This is the first location.";
@@ -77,6 +104,7 @@
         location2.title = @"This is the second title.";
         location2.location = @"This is the second location.";
         [_locations addObject:location2];
+         */
     }
     
     return _locations;
@@ -143,11 +171,25 @@
 }
 */
 
-/*
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        // Get the deleted object
+        LocationEntity* locationToDelete = [self.locations objectAtIndex:indexPath.row];
+
+        // Delete from managedObjectContext
+        [[appDelegate managedObjectContext] deleteObject:locationToDelete];
+
+        NSError* error = nil;
+        if (![[appDelegate managedObjectContext] save:&error]) {
+            NSLog(@"Fail to delete object");
+        } else {
+            // Remove from locations
+            [self.locations removeObjectAtIndex:indexPath.row];
+        }
+
         // Delete the row from the data source
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
@@ -155,7 +197,6 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
 
 /*
 // Override to support rearranging the table view.
