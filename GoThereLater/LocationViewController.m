@@ -125,6 +125,16 @@
     
     appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
 
+    UIPasteboard *pboard = [UIPasteboard generalPasteboard];
+    NSString *string = pboard.string;
+    NSLog(@"You copied string: %@", string);
+    NSURL* url = [NSURL URLWithString:string];
+    if (url == nil) {
+        NSLog(@"Nope %@ is not a proper URL", string);
+    } else {
+        NSLog(@"You copied URL: %@", url);
+    }
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
