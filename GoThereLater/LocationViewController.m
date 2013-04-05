@@ -11,6 +11,7 @@
 #import "LocationDetailsViewController.h"
 #import "Location.h"
 #import "LocationEntity.h"
+#import "LocationDataParser.h"
 
 @interface LocationViewController ()
 
@@ -133,6 +134,9 @@
         NSLog(@"Nope %@ is not a proper URL", string);
     } else {
         NSLog(@"You copied URL: %@", url);
+        
+        Location *parsedLocation = [LocationDataParser getLocationDataFromUrl:url];
+        NSLog(@"Location data: %@", parsedLocation);
     }
     
     // Uncomment the following line to preserve selection between presentations.

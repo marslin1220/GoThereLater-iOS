@@ -25,6 +25,8 @@
 		A280F82D16D4AA8C005290C3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A280F82C16D4AA8C005290C3 /* CoreData.framework */; };
 		A280F83116D4ABDA005290C3 /* LocationContent.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A280F82F16D4ABDA005290C3 /* LocationContent.xcdatamodeld */; };
 		A280F83416D4AD79005290C3 /* LocationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = A280F83316D4AD79005290C3 /* LocationEntity.m */; };
+		A2C6DAC71701DFC10054FA85 /* LocationDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C6DAC61701DFC10054FA85 /* LocationDataParser.m */; };
+		A2C6DACA1702FADF0054FA85 /* NSString+stripper.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C6DAC91702FADF0054FA85 /* NSString+stripper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,10 @@
 		A280F83016D4ABDA005290C3 /* LocationContent.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocationContent.xcdatamodel; sourceTree = "<group>"; };
 		A280F83216D4AD79005290C3 /* LocationEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationEntity.h; sourceTree = "<group>"; };
 		A280F83316D4AD79005290C3 /* LocationEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationEntity.m; sourceTree = "<group>"; };
+		A2C6DAC51701DFC10054FA85 /* LocationDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDataParser.h; sourceTree = "<group>"; };
+		A2C6DAC61701DFC10054FA85 /* LocationDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDataParser.m; sourceTree = "<group>"; };
+		A2C6DAC81702FADF0054FA85 /* NSString+stripper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+stripper.h"; sourceTree = "<group>"; };
+		A2C6DAC91702FADF0054FA85 /* NSString+stripper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+stripper.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,12 +121,16 @@
 				A213F61F169C22A300BA282F /* Location.m */,
 				A213F61B169C21B900BA282F /* LocationViewController.h */,
 				A213F61C169C21B900BA282F /* LocationViewController.m */,
+				A2C6DAC51701DFC10054FA85 /* LocationDataParser.h */,
+				A2C6DAC61701DFC10054FA85 /* LocationDataParser.m */,
 				A213F613169C1B2E00BA282F /* ViewController.h */,
 				A213F614169C1B2E00BA282F /* ViewController.m */,
 				A213F5FF169C1B2E00BA282F /* Supporting Files */,
 				A280F82F16D4ABDA005290C3 /* LocationContent.xcdatamodeld */,
 				A280F83216D4AD79005290C3 /* LocationEntity.h */,
 				A280F83316D4AD79005290C3 /* LocationEntity.m */,
+				A2C6DAC81702FADF0054FA85 /* NSString+stripper.h */,
+				A2C6DAC91702FADF0054FA85 /* NSString+stripper.m */,
 			);
 			path = GoThereLater;
 			sourceTree = "<group>";
@@ -214,6 +224,8 @@
 				A234F7DA16B7F8570021E826 /* LocationAdderViewController.m in Sources */,
 				A280F83116D4ABDA005290C3 /* LocationContent.xcdatamodeld in Sources */,
 				A280F83416D4AD79005290C3 /* LocationEntity.m in Sources */,
+				A2C6DAC71701DFC10054FA85 /* LocationDataParser.m in Sources */,
+				A2C6DACA1702FADF0054FA85 /* NSString+stripper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
