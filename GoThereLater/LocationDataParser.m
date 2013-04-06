@@ -22,13 +22,26 @@
 
     if (nil == responseContent) return nil;
 
-    NSLog(@"reponseContent length: %d", [responseContent length]);
+    // Remove single script
     responseContent = [responseContent stringByStrippingScript];
-    NSLog(@"reponseContent length: %d", [responseContent length]);
+    
+    // Fetch the title
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"<title>.*</title>"
+                                                                           options:NSRegularExpressionCaseInsensitive
+                                                                             error:&error];
+    NSArray *regMatches = [regex matchesInString:responseContent
+                                         options:0
+                                           range:NSMakeRange(0, [responseContent length])];
+    
+    for (NSTextCheckingResult *match in regMatches) {
+        NSLog(@"Found reg number: %@", [[responseContent substringWithRange:[match range]] stringByStrippingHTML]);
+        locationData.title = [[responseContent substringWithRange:[match range]] stringByStrippingHTML];
+    }
+    
+    // Remove all the HTML tags
     responseContent = [responseContent stringByStrippingHTML];
-    NSLog(@"reponseContent length: %d", [responseContent length]);
-    //NSLog(@"Response Content: %@", responseContent);
 
+    // Fetch phone number and address
     // Create detectors
     NSDataDetector *detector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypePhoneNumber|NSTextCheckingTypeAddress
                                                                error:nil];
